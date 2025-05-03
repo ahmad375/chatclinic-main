@@ -1,0 +1,5 @@
+export { EmptyDocumentsIcon } from './EmpyDocumentsIcon'
+export { EmptyQuestionBankIcon } from './EmptyQuestionBankIcon'
+export { EmptyTicketsIcon } from './EmptyTicketsIcon'
+export { EmptyPagesIcon } from './EmptyPagesIcon'
+export { EmptyVideosIcon } from './EmptyVideosIcon'

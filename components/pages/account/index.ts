@@ -1,0 +1,6 @@
+export { LogInPage } from './LogInPage'
+export { SignUpPage } from './SignUpPage'
+export { RecoverPage } from './RecoverPage'
+export { ResetPage } from './ResetPage'
+export { VerificationPage } from './VerificationPage'
+export { IsVerifiedPage } from './IsVerifiedPage'

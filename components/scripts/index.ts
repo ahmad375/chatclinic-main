@@ -1,0 +1,1 @@
+export { ChatwizardScript } from './ChatwizardScript'

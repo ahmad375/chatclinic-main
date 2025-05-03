@@ -1,0 +1,5 @@
+export enum ClientMessageSender {
+  SCRIPT = 'CHATCLINIC_SCRIPT',
+  WIDGET = 'CHATCLINIC_WIDGET',
+  FRAME = 'CHATCLINIC_FRAME'
+}

@@ -1,0 +1,207 @@
+.gradient-bg {
+    position: relative;
+    background: radial-gradient(circle, #fff, var(--chakra-colors-primary-100));
+    filter: blur(5px); 
+  }
+
+.gradient-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* background-image: url('path-to-your-noise-texture.png'); */
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.custom-green-pattern { 
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22 width=%221000%22 height=%221000%22%3E%3Cg filter=%22url(%23a)%22 fill=%22%2302314b%22%3E%3Cpath d=%22M-500-500h2000v2000H-500z%22%2F%3E%3Cpath d=%22M-219-314-365 760l190 375L1104-109%22%2F%3E%3Cpath d=%22M465-256 246 201l955 1020 387-1460%22%2F%3E%3Cpath d=%22m1345 414-417 676 248 745L2365 633M-215 183l-318 901 842 229 327-870%22%2F%3E%3Cpath d=%22M1405 741 207 1220l991 803 227-1097%22%2F%3E%3Cpath d=%22M1811 988 774 1496l1289 1100 297-1113%22%2F%3E%3C%2Fg%3E%3Cpath fill=%22%23fff%22 filter=%22url(%23b)%22 d=%22M0 0h1000v1000H0z%22%2F%3E%3Cdefs%3E%3Cfilter id=%22b%22 x=%22-400%22 y=%22-400%22 width=%221400%22 height=%221400%22 filterUnits=%22userSpaceOnUse%22 primitiveUnits=%22userSpaceOnUse%22 color-interpolation-filters=%22linearRGB%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.105%22 numOctaves=%224%22 seed=%2215%22 stitchTiles=%22no-stitch%22 x=%220%22 y=%220%22 width=%221000%22 height=%221000%22 result=%22turbulence%22%2F%3E%3CfeSpecularLighting surfaceScale=%2210%22 specularConstant=%22.07%22 specularExponent=%2220%22 lighting-color=%22%23fff%22 x=%220%22 y=%220%22 width=%221000%22 height=%221000%22 in=%22turbulence%22 result=%22specularLighting%22%3E%3CfeDistantLight azimuth=%223%22 elevation=%22100%22%2F%3E%3C%2FfeSpecularLighting%3E%3C%2Ffilter%3E%3Cfilter id=%22a%22 x=%22-50%22 y=%22-50%22 width=%221100%22 height=%221100%22 filterUnits=%22userSpaceOnUse%22 color-interpolation-filters=%22sRGB%22%3E%3CfeFlood flood-opacity=%220%22 result=%22BackgroundImageFix%22%2F%3E%3CfeBlend in=%22SourceGraphic%22 in2=%22BackgroundImageFix%22 result=%22shape%22%2F%3E%3CfeGaussianBlur stdDeviation=%2250%22 result=%22effect1_foregroundBlur_1_2%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
+}
+
+
+@keyframes pulse {
+  33% {
+    background: var(--chakra-colors-secondary-200);
+  }
+  66% {
+    background: var(--chakra-colors-secondary-300);
+  }
+  100% {
+    background: var(--chakra-colors-secondary-200);
+  }
+}
+
+.highlight {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+.highlight:before {
+  content: " ";
+  display: block;
+  height: 90%;
+  width: 100%;
+  margin-left: -3px;
+  margin-right: -3px;
+  position: absolute;
+  background: #ffd500;
+  transform: rotate(2deg);
+  top: -1px;
+  left: -1px;
+  border-radius: 20% 25% 20% 24%;
+  padding: 10px 3px 3px 10px;
+  z-index: -1
+}
+
+.pattern { 
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  /* background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 3000 1688%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask id=%22b%22 x=%220%22 y=%220%22 width=%223000%22 height=%221688%22%3E%3Cpath fill=%22url(%23a)%22 d=%22M0 0h3000v1688H0z%22%2F%3E%3C%2Fmask%3E%3Cpath fill=%22%2302314b%22 d=%22M0 0h3000v1688H0z%22%2F%3E%3Cg style=%22transform-origin:center center%22 stroke=%22%231a4663%22 stroke-width=%223%22 mask=%22url(%23b)%22%3E%3Cpath fill=%22none%22 d=%22M0 0h150v150H0z%22%2F%3E%3Cpath fill=%22%231a4663e8%22 d=%22M150 0h150v150H150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 0h150v150H300zM450 0h150v150H450zM600 0h150v150H600zM750 0h150v150H750z%22%2F%3E%3Cpath fill=%22%231a46631b%22 d=%22M900 0h150v150H900z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 0h150v150h-150zM1200 0h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466303%22 d=%22M1350 0h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1500 0h150v150h-150zM1650 0h150v150h-150zM1800 0h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663d0%22 d=%22M1950 0h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466355%22 d=%22M2100 0h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2250 0h150v150h-150zM2400 0h150v150h-150zM2550 0h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466302%22 d=%22M2700 0h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2850 0h150v150h-150zM0 150h150v150H0zM150 150h150v150H150z%22%2F%3E%3Cpath fill=%22%231a4663cc%22 d=%22M300 150h150v150H300z%22%2F%3E%3Cpath fill=%22%231a4663cb%22 d=%22M450 150h150v150H450z%22%2F%3E%3Cpath fill=%22none%22 d=%22M600 150h150v150H600z%22%2F%3E%3Cpath fill=%22%231a4663a7%22 d=%22M750 150h150v150H750z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 150h150v150H900zM1050 150h150v150h-150zM1200 150h150v150h-150zM1350 150h150v150h-150zM1500 150h150v150h-150zM1650 150h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466387%22 d=%22M1800 150h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466367%22 d=%22M1950 150h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466355%22 d=%22M2100 150h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2250 150h150v150h-150zM2400 150h150v150h-150zM2550 150h150v150h-150zM2700 150h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a46639d%22 d=%22M2850 150h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 300h150v150H0zM150 300h150v150H150zM300 300h150v150H300zM450 300h150v150H450z%22%2F%3E%3Cpath fill=%22%231a4663de%22 d=%22M600 300h150v150H600z%22%2F%3E%3Cpath fill=%22%231a466365%22 d=%22M750 300h150v150H750z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 300h150v150H900zM1050 300h150v150h-150zM1200 300h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663e6%22 d=%22M1350 300h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1500 300h150v150h-150zM1650 300h150v150h-150zM1800 300h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663aa%22 d=%22M1950 300h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663b9%22 d=%22M2100 300h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2250 300h150v150h-150zM2400 300h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a46632d%22 d=%22M2550 300h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2700 300h150v150h-150zM2850 300h150v150h-150zM0 450h150v150H0zM150 450h150v150H150zM300 450h150v150H300zM450 450h150v150H450z%22%2F%3E%3Cpath fill=%22%231a46636b%22 d=%22M600 450h150v150H600z%22%2F%3E%3Cpath fill=%22%231a4663d9%22 d=%22M750 450h150v150H750z%22%2F%3E%3Cpath fill=%22none%22 d=%22M900 450h150v150H900z%22%2F%3E%3Cpath fill=%22%231a46631d%22 d=%22M1050 450h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 450h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a46638e%22 d=%22M1350 450h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1500 450h150v150h-150zM1650 450h150v150h-150zM1800 450h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466389%22 d=%22M1950 450h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2100 450h150v150h-150zM2250 450h150v150h-150zM2400 450h150v150h-150zM2550 450h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466313%22 d=%22M2700 450h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2850 450h150v150h-150zM0 600h150v150H0zM150 600h150v150H150z%22%2F%3E%3Cpath fill=%22%231a46632a%22 d=%22M300 600h150v150H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 600h150v150H450zM600 600h150v150H600zM750 600h150v150H750zM900 600h150v150H900z%22%2F%3E%3Cpath fill=%22%231a4663b6%22 d=%22M1050 600h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 600h150v150h-150zM1350 600h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466350%22 d=%22M1500 600h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1650 600h150v150h-150zM1800 600h150v150h-150zM1950 600h150v150h-150zM2100 600h150v150h-150zM2250 600h150v150h-150zM2400 600h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663a8%22 d=%22M2550 600h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2700 600h150v150h-150zM2850 600h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663c5%22 d=%22M0 750h150v150H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 750h150v150H150z%22%2F%3E%3Cpath fill=%22%231a46630d%22 d=%22M300 750h150v150H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 750h150v150H450zM600 750h150v150H600zM750 750h150v150H750z%22%2F%3E%3Cpath fill=%22%231a46636a%22 d=%22M900 750h150v150H900z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 750h150v150h-150zM1200 750h150v150h-150zM1350 750h150v150h-150zM1500 750h150v150h-150zM1650 750h150v150h-150zM1800 750h150v150h-150zM1950 750h150v150h-150zM2100 750h150v150h-150zM2250 750h150v150h-150zM2400 750h150v150h-150zM2550 750h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663b6%22 d=%22M2700 750h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2850 750h150v150h-150zM0 900h150v150H0zM150 900h150v150H150z%22%2F%3E%3Cpath fill=%22%231a46631c%22 d=%22M300 900h150v150H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 900h150v150H450zM600 900h150v150H600z%22%2F%3E%3Cpath fill=%22%231a466383%22 d=%22M750 900h150v150H750z%22%2F%3E%3Cpath fill=%22%231a466394%22 d=%22M900 900h150v150H900z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 900h150v150h-150zM1200 900h150v150h-150zM1350 900h150v150h-150zM1500 900h150v150h-150zM1650 900h150v150h-150zM1800 900h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663f9%22 d=%22M1950 900h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466372%22 d=%22M2100 900h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2250 900h150v150h-150zM2400 900h150v150h-150zM2550 900h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663ec%22 d=%22M2700 900h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466323%22 d=%22M2850 900h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 1050h150v150H0z%22%2F%3E%3Cpath fill=%22%231a46637f%22 d=%22M150 1050h150v150H150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M300 1050h150v150H300zM450 1050h150v150H450z%22%2F%3E%3Cpath fill=%22%231a46639a%22 d=%22M600 1050h150v150H600z%22%2F%3E%3Cpath fill=%22%231a4663cc%22 d=%22M750 1050h150v150H750z%22%2F%3E%3Cpath fill=%22%231a46631f%22 d=%22M900 1050h150v150H900z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1050 1050h150v150h-150zM1200 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466353%22 d=%22M1350 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663ac%22 d=%22M1500 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1650 1050h150v150h-150zM1800 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663e3%22 d=%22M1950 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663ff%22 d=%22M2100 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2250 1050h150v150h-150zM2400 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663e0%22 d=%22M2550 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2700 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663f1%22 d=%22M2850 1050h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 1200h150v150H0zM150 1200h150v150H150z%22%2F%3E%3Cpath fill=%22%231a466371%22 d=%22M300 1200h150v150H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 1200h150v150H450z%22%2F%3E%3Cpath fill=%22%231a466300%22 d=%22M600 1200h150v150H600z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 1200h150v150H750zM900 1200h150v150H900zM1050 1200h150v150h-150zM1200 1200h150v150h-150zM1350 1200h150v150h-150zM1500 1200h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663d3%22 d=%22M1650 1200h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663c5%22 d=%22M1800 1200h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1950 1200h150v150h-150zM2100 1200h150v150h-150zM2250 1200h150v150h-150zM2400 1200h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466364%22 d=%22M2550 1200h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2700 1200h150v150h-150zM2850 1200h150v150h-150zM0 1350h150v150H0zM150 1350h150v150H150z%22%2F%3E%3Cpath fill=%22%231a466374%22 d=%22M300 1350h150v150H300z%22%2F%3E%3Cpath fill=%22%231a4663cf%22 d=%22M450 1350h150v150H450z%22%2F%3E%3Cpath fill=%22%231a4663d6%22 d=%22M600 1350h150v150H600z%22%2F%3E%3Cpath fill=%22none%22 d=%22M750 1350h150v150H750zM900 1350h150v150H900zM1050 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466390%22 d=%22M1200 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1350 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a46636b%22 d=%22M1500 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663b3%22 d=%22M1650 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1800 1350h150v150h-150zM1950 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a46636e%22 d=%22M2100 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2250 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a466378%22 d=%22M2400 1350h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2550 1350h150v150h-150zM2700 1350h150v150h-150zM2850 1350h150v150h-150zM0 1500h150v150H0zM150 1500h150v150H150zM300 1500h150v150H300z%22%2F%3E%3Cpath fill=%22%231a4663f4%22 d=%22M450 1500h150v150H450z%22%2F%3E%3Cpath fill=%22%231a466365%22 d=%22M600 1500h150v150H600z%22%2F%3E%3Cpath fill=%22%231a4663e2%22 d=%22M750 1500h150v150H750z%22%2F%3E%3Cpath fill=%22%231a46631c%22 d=%22M900 1500h150v150H900z%22%2F%3E%3Cpath fill=%22%231a466399%22 d=%22M1050 1500h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1200 1500h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663c2%22 d=%22M1350 1500h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1500 1500h150v150h-150zM1650 1500h150v150h-150zM1800 1500h150v150h-150zM1950 1500h150v150h-150zM2100 1500h150v150h-150zM2250 1500h150v150h-150zM2400 1500h150v150h-150zM2550 1500h150v150h-150zM2700 1500h150v150h-150zM2850 1500h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663f0%22 d=%22M0 1650h150v150H0z%22%2F%3E%3Cpath fill=%22none%22 d=%22M150 1650h150v150H150z%22%2F%3E%3Cpath fill=%22%231a466373%22 d=%22M300 1650h150v150H300z%22%2F%3E%3Cpath fill=%22none%22 d=%22M450 1650h150v150H450zM600 1650h150v150H600zM750 1650h150v150H750zM900 1650h150v150H900zM1050 1650h150v150h-150zM1200 1650h150v150h-150zM1350 1650h150v150h-150zM1500 1650h150v150h-150zM1650 1650h150v150h-150zM1800 1650h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a46634f%22 d=%22M1950 1650h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2100 1650h150v150h-150zM2250 1650h150v150h-150zM2400 1650h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a4663c2%22 d=%22M2550 1650h150v150h-150z%22%2F%3E%3Cpath fill=%22none%22 d=%22M2700 1650h150v150h-150z%22%2F%3E%3Cpath fill=%22%231a46632c%22 d=%22M2850 1650h150v150h-150z%22%2F%3E%3C%2Fg%3E%3Cpath fill=%22%23f3f3f3%22 filter=%22url(%23c)%22 opacity=%22.8%22 d=%22M0 0h3000v1688H0z%22%2F%3E%3Cdefs%3E%3CradialGradient id=%22a%22%3E%3Cstop offset=%2250%25%22 stop-color=%22%23fff%22 stop-opacity=%220%22%2F%3E%3Cstop offset=%221%22 stop-color=%22%23fff%22 stop-opacity=%22.5%22%2F%3E%3C%2FradialGradient%3E%3Cfilter id=%22c%22 x=%22-1200%22 y=%22-675.2%22 width=%224200%22 height=%222363.2%22 filterUnits=%22userSpaceOnUse%22 primitiveUnits=%22userSpaceOnUse%22 color-interpolation-filters=%22linearRGB%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%22.105%22 numOctaves=%224%22 seed=%2215%22 stitchTiles=%22no-stitch%22 x=%220%22 y=%220%22 width=%223000%22 height=%221688%22 result=%22turbulence%22%2F%3E%3CfeSpecularLighting surfaceScale=%2210%22 specularConstant=%22.07%22 specularExponent=%2220%22 lighting-color=%22%23fff%22 x=%220%22 y=%220%22 width=%223000%22 height=%221688%22 in=%22turbulence%22 result=%22specularLighting%22%3E%3CfeDistantLight azimuth=%223%22 elevation=%22100%22%2F%3E%3C%2FfeSpecularLighting%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E"); */
+  background-image: url('/account_background.jpeg');
+}
+
+/* TipTap */
+.ProseMirror:focus {
+  outline: none;
+}
+
+.user-chat-bubble,
+.assistant-chat-bubble {
+  position: relative;
+}
+
+.user-chat-bubble:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  background: black;
+  background-attachment: fixed;
+  border-bottom-left-radius: 15px;
+}
+
+.user-chat-bubble:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-left-radius: 10px;
+}
+
+.video-play-button {
+  transform: scale(1);
+  animation: video-pulse 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes video-pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0,0,0, 0.75);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+.tiptap-underline {
+
+}
+
+.tiptap-bullet-list {
+  padding-left: 16px;
+}
+
+.tiptap-link {
+  color: var(--chakra-colors-primary-600) !important;
+  text-decoration: underline !important;
+}
+
+.chatwizard-message-content ul, ol {
+  padding-left: 16px
+}
+
+.chatwizard-message-content strong {
+  font-weight: 600;
+}
+
+.chatwizard-message-content a {
+  color: var(--chakra-colors-primary-600) !important;
+  text-decoration: underline !important;
+}
+
+.kb-file-upload {
+  margin-top: 20px;
+}
+.file-upload-box {
+  border: 1px dashed #b6bed1;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  color: #1a1b1c;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+}
+.file-upload-box .file-upload-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.file-link{
+  font-weight: 500;
+  text-decoration: underline;
+}
+.file-upload-box .file-link:hover{
+  text-decoration: none;
+}
+.file-atc-box {
+  margin-top: 15px;
+}
+.file-detail{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1a1b1c;
+  font-weight: 400;
+  /* margin-bottom: 3px; */
+}
+.deleteFile{
+  font-size: 20px;
+  cursor: pointer;
+}
+.progress-bar {
+  height: 8px;
+  width: 100%;
+  background: #dae2f2;
+  border-radius: 4px;
+}
+.progress-bar-fill {
+  width: 100%;
+  height: 8px;
+  background: #1861f2;
+}
+.css-r6z5ec{
+  inset: auto auto 0 0!important;
+}
