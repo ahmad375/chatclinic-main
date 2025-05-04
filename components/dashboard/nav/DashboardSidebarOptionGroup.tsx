@@ -1,18 +1,19 @@
 'use client'
-import { type FC, type PropsWithChildren } from 'react'
+import { type FC, type PropsWithChildren, type ElementType } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Box, Flex, Icon, type As, Grid, GridItem } from '@chakra-ui/react'
+import { Box, Flex, Icon, Grid, GridItem } from '@chakra-ui/react'
 import { HiChevronDown } from 'react-icons/hi'
 import { DashboardSidebarOption, type DashboardSidebarOptionProps } from '.'
 
 export const DashboardSidebarOptionGroup: FC<
   PropsWithChildren<{
     id: string
-    icon: As
+    icon: ElementType // ✅ Fixed: use ElementType instead of As
     options: DashboardSidebarOptionProps[]
   }>
 > = ({ id, children, icon, options }) => {
   const pathname = usePathname()
+  const { push } = useRouter()
 
   const active = options
     .map((o) =>
@@ -23,8 +24,6 @@ export const DashboardSidebarOptionGroup: FC<
         : false
     )
     .includes(true)
-
-  const { push } = useRouter()
 
   return (
     <Box>
@@ -42,7 +41,6 @@ export const DashboardSidebarOptionGroup: FC<
           fontWeight={500}
           fontSize='md'
           userSelect='none'
-          //   pointerEvents={hardActive ? 'none' : 'all'}
           _hover={active ? undefined : { bgColor: 'whiteAlpha.100' }}
           _active={{ bgColor: 'whiteAlpha.200' }}
           onClick={() => {

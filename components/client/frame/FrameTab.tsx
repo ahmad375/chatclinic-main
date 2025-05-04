@@ -1,10 +1,14 @@
 'use client'
 import type { FC, PropsWithChildren } from 'react'
-import { Grid, GridItem, Icon, Text, type As } from '@chakra-ui/react'
+import { Grid, GridItem, Icon, Text } from '@chakra-ui/react' // Removed 'type As' from import
 import { useFrame, useFrameRouter } from '@/hooks'
 
 export const FrameTab: FC<
-  PropsWithChildren<{ icon: As; path: string; catchAll?: boolean }>
+  PropsWithChildren<{
+    icon: React.ElementType
+    path: string
+    catchAll?: boolean
+  }>
 > = ({ children, icon, path, catchAll }) => {
   const {
     state: { user }

@@ -38,14 +38,14 @@ export async function DELETE(req: Request) {
 
     if (!page) throw new Error('Deletion not acknowledged')
 
-    const apiResponse: APIResponse<{ page: Page }> = {
+    const apiResponse: APIResponse<{ page: Page | null }> = {
       success: true,
       notification: {
         type: 'success',
         title: 'Page Removed',
         description: 'Successfully removed the page'
       },
-      page
+      page: page.value
     }
 
     return new Response(JSON.stringify(apiResponse), {
