@@ -6,13 +6,13 @@ import {
   Heading,
   Text,
   Icon,
-  type ButtonProps
+  type ButtonProps,
+  type As
 } from '@chakra-ui/react'
-import { PrimaryButton } from '../buttons/PrimaryButton'
+import { PrimaryButton } from '../buttons'
 
-// Replace `As` with `React.ElementType`
 export const DashboardEmptySection: FC<{
-  icon: React.ElementType // Use React.ElementType for icon
+  icon: As
   title: ReactNode
   description: ReactNode
   action?: ButtonProps
