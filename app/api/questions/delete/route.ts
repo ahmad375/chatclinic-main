@@ -39,27 +39,14 @@ export async function DELETE(req: Request) {
 
     if (!question) throw new Error('Deletion not acknowledged')
 
-    if (!question.value) {
-      return new Response(JSON.stringify({
-        success: false,
-        notification: {
-          type: 'error',
-          title: 'Not Found',
-          description: 'The question could not be found or deleted'
-        }
-      }), {
-        status: 404
-      })
-    }
-
-    const apiResponse: APIResponse<{ question: Question | null }> = {
+    const apiResponse: APIResponse<{ question: Question }> = {
       success: true,
       notification: {
         type: 'success',
         title: 'Question Deleted',
         description: 'Successfully deleted the question from your question bank'
       },
-      question: question.value
+      question
     }
 
     return new Response(JSON.stringify(apiResponse), {

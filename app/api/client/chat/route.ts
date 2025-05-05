@@ -79,18 +79,10 @@ export async function POST(req: Request) {
 
     /* Messages with the system prompt */
     const messages = [getSystemMessage({}), ...truncatedMessages]
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
-      },
-      body: JSON.stringify({
-        ...chatCompletionConfig,
-        messages,
-        stream: true,
-        function_call: 'auto'
-      })
+    const response = await openai.chat.completions.create({
+      ...chatCompletionConfig,
+      messages,
+      function_call: 'auto'
     })
 
     const data = new experimental_StreamData()
@@ -156,17 +148,10 @@ export async function POST(req: Request) {
 
         const newMessages = createFunctionCallMessages(value)
 
-        return await fetch('https://api.openai.com/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
-          },
-          body: JSON.stringify({
-            ...chatCompletionConfig,
-            messages: [...messages, ...newMessages],
-            stream: true
-          })
+        return openai.chat.completions.create({
+          ...chatCompletionConfig,
+          // @ts-ignore
+          messages: [...messages, ...newMessages]
         })
       },
       async onFinal(completion) {

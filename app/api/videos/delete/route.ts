@@ -38,19 +38,6 @@ export async function DELETE(req: Request) {
 
     if (!video) throw new Error('Deletion not acknowledged')
 
-    if (!video.value) {
-      return new Response(JSON.stringify({
-        success: false,
-        notification: {
-          type: 'error',
-          title: 'Not Found',
-          description: 'The video could not be found or deleted'
-        }
-      }), {
-        status: 404
-      })
-    }
-
     const apiResponse: APIResponse<{ video: Video }> = {
       success: true,
       notification: {
@@ -58,7 +45,7 @@ export async function DELETE(req: Request) {
         title: 'Video Removed',
         description: 'Successfully removed the video'
       },
-      video: video.value // Extract the video from .value
+      video
     }
 
     return new Response(JSON.stringify(apiResponse), {

@@ -38,24 +38,14 @@ export async function DELETE(req: Request) {
 
     if (!document) throw new Error('Deletion not acknowledged')
 
-    // const apiResponse: APIResponse<{ document: Document }> = {
-    //   success: true,
-    //   notification: {
-    //     type: 'success',
-    //     title: 'Document Deleted',
-    //     description: `Successfully deleted the document titled "${document.title}"`
-    //   },
-    //   document
-    // }
-
-    const apiResponse: APIResponse<{ document: Document | null }> = {
+    const apiResponse: APIResponse<{ document: Document }> = {
       success: true,
       notification: {
         type: 'success',
         title: 'Document Deleted',
-        description: `Successfully deleted the document titled "${document.value?.title ?? 'Untitled'}"`
+        description: `Successfully deleted the document titled "${document.title}"`
       },
-      document: document.value
+      document
     }
 
     return new Response(JSON.stringify(apiResponse), {

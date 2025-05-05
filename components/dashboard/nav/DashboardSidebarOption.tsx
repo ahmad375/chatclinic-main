@@ -1,10 +1,10 @@
 'use client'
-import type { FC, PropsWithChildren, ReactNode, ElementType } from 'react'
+import type { FC, PropsWithChildren, ReactNode } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { Icon, Flex, Box, Badge } from '@chakra-ui/react'
+import { Icon, Flex, Box, type As, Badge } from '@chakra-ui/react'
 
 export type DashboardSidebarOptionProps = PropsWithChildren<{
-  icon: ElementType // ✅ Use ElementType from React
+  icon: As
   paths?: string[]
   onClick?: Function
   catchAll?: boolean
